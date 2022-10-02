@@ -1,8 +1,10 @@
 package majumundur.kena.helloworld
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -55,6 +57,12 @@ class MainActivity : AppCompatActivity() {
                 image1.setImageDrawable(getDrawable(R.drawable.superman6))
             }
         }
+    }
+    fun pindahPage(view:View){
+        val intent = Intent(this, ListMovie::class.java).apply {
+           // putExtra(EXTRA_MESSAGE, message)
+        }
+        startActivity(intent)
     }
 
 }

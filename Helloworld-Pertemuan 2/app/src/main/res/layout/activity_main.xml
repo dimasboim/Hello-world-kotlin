@@ -90,5 +90,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+    <Button
+        android:id="@+id/buttonPindah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/pindahbutton"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/buttonGanti"
+        app:layout_constraintTop_toTopOf="@id/buttonGanti"
+        tools:visibility="visible"
+        android:onClick="pindahPage"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
