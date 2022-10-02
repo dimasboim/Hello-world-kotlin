@@ -1,0 +1,35 @@
+{
+  "ProductList": "List Produk Berdasarkan Kategori",
+  "item": [
+    
+      {
+        "productID": "{{ faker 'random.number' min=10000 max=100000 }}",
+        "productDesc": "OMG Matte Kiss Lip Cream Mauve Nude Ombre Packag",
+        "priceOri": 50000,
+        "disc":10,
+        "price":45000,
+        "storeLocation":"Jakarta Selatan","rating":"4.3","terjual":"{{ faker 'random.number' min=100 max=100000 }}"
+        "productImageURL": "https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/3/17/073b0a19-799d-4f0f-883b-014fa479f9b8.jpg.webp?ect=4g" 
+      },
+       {
+       "productID": "{{ faker 'random.number' min=10000 max=100000 }}",
+        "productDesc": "Palmolive Sabun Mandi Naturals Milk & Cherry Blossom ",
+        "priceOri": 177000,
+        "disc":50,
+        "price":88500,
+        "storeLocation":"Tangerang","rating":"4.5","terjual":"{{ faker 'random.number' min=100 max=100000 }}"
+        "productImageURL": "https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/1/6/8fbed6e6-18a1-43b1-9dec-c40cf4515544.jpg.webp?ect=4g" 
+      },
+      {
+       "productID": "{{ faker 'random.number' min=10000 max=100000 }}",
+        "productDesc": "Mainan salon rias make up anak kitty salon-salonan ",
+        "priceOri": 20000,
+        "disc":25,
+        "price":15000,
+        "storeLocation":"Surabaya","rating":"4.5","terjual":"{{ faker 'random.number' min=100 max=100000 }}"
+        "productImageURL": "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2021/9/24/6c0a5f32-fe72-46f3-8dff-7506f106068a.jpg.webp?ect=4g" 
+      }
+    
+  ],
+  "total": "{{queryParam 'total' '2'}}"
+}

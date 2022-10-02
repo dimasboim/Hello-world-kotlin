@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Helloworld</string>
+    <string name="texthello">Hallo Dunia</string>
+
+    <string name="textButton">Ganti Teks Random</string>
+
+</resources>

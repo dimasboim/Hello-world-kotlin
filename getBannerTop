@@ -1,0 +1,20 @@
+{
+  "Banner": "Slide Banner Atas",
+  "item": [
+    
+      {
+        "bannerID": "{{ faker 'random.number' min=10000 max=100000 }}",
+        "bannerName": "{{ faker 'name.firstName' }}",
+        "bannerURLTarget": "https://www.tokopedia.com/discovery/beauty-dealight",
+        "bannerImageURL": "https://images.tokopedia.net/img/cache/1190/wmEwCC/2021/11/3/70998e99-d7da-4ca6-acfa-cb723d4f7385.jpg.webp?ect=4g" 
+      },
+       {
+        "bannerID": "{{ faker 'random.number' min=10000 max=100000 }}",
+        "bannerName": "{{ faker 'name.firstName' }}",
+        "bannerURLTarget": "https://www.tokopedia.com/discovery/tukar-tambah",
+        "bannerImageURL": "https://images.tokopedia.net/img/cache/1208/NsjrJu/2021/7/30/74d32a7f-6a2d-49a3-b325-114de4b055c5.jpg.webp?ect=3g" 
+      },
+    
+  ],
+  "total": "{{queryParam 'total' '2'}}"
+}
