@@ -1,36 +1,42 @@
 package majumundur.kena.helloworld.adapter
-
-import android.content.Context
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
-//import android.view.View
-import kotlinx.android.synthetic.main.adapter_movie.view.*
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import majumundur.kena.helloworld.R
-import majumundur.kena.helloworld.models.DataItem
+import majumundur.kena.helloworld.models.Result
 
 //import kotlin.android.synthetic.main.adapter_movie.view.*
-class MainAdapter(val data: List<DataItem>?) : RecyclerView.Adapter<MainAdapter.MyHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.adapter_movie, parent, false)
-        return MyHolder(v)
+class MainAdapter(val movies: List<Result>): RecyclerView.Adapter<MoviesViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_movie, parent, false)
+        return MoviesViewHolder(view)
     }
-    override fun getItemCount(): Int = data?.size ?: 0
-    override fun onBindViewHolder(holder: MyHolder, position: Int) {
-        holder.bind(data?.get(position))
+
+    override fun getItemCount(): Int {
+        return movies.size
     }
-    class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(get: DataItem?) {
-            itemView.judul.text = get?.judul
-            itemView.sutradara.text = get?.sutradara
-            itemView.rating.text = get?.rating
-            itemView.deskripsi.text = get?.deskripsi
 
-
-        }
+    override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
+        return holder.bind(movies[position])
     }
 }
 
 
+class MoviesViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
+    private val photo:ImageView = itemView.findViewById(R.id.movie_photo)
+    private val title:TextView = itemView.findViewById(R.id.movie_title)
+    private val overview:TextView = itemView.findViewById(R.id.movie_overview)
+    private val rating:TextView = itemView.findViewById(R.id.movie_rating)
+
+    fun bind(movie: Result) {
+        Glide.with(itemView.context).load("http://image.tmdb.org/t/p/w500${movie.poster_path}").into(photo)
+        title.text = "Title: "+movie.title
+        overview.text = movie.overview
+        rating.text = "Rating : "+movie.vote_average.toString()
+    }
+
+}
